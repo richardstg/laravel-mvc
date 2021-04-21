@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+// Dice game routes
 Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/dice', 'App\Http\Controllers\Dice\GetDiceGame@index');
+Route::post('/dice', 'App\Http\Controllers\Dice\PostDiceGame@index');
+Route::get('/dice/play', 'App\Http\Controllers\Dice\GetDiceGamePlay@index');
+Route::post('/dice/play', 'App\Http\Controllers\Dice\PostDiceGamePlay@index');
+Route::post('/dice/computer-play', 'App\Http\Controllers\Dice\PostDiceGameComputerPlay@index');
+Route::get('/dice/results', 'App\Http\Controllers\Dice\GetDiceGameResults@index');
