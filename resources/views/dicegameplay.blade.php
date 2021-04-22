@@ -13,10 +13,12 @@
     </div>
     <form action="play" method="post">
         <input type="submit" name="rollDices" value="Kasta">
+        {{ csrf_field() }}
     </form>
     @if($totalPointsPlayer > 0)
         <form action="computerplay" method="post">
             <input type="submit" name="stopRound" value="Stanna">
+            {{ csrf_field() }}
         </form>
     @endif
 

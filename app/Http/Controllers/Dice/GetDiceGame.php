@@ -16,7 +16,8 @@ class GetDiceGame extends Controller
 {
     public function index()
     {
-        $_SESSION["game"] = null;
+        // $_SESSION["game"] = null;
+        session(['game' => null]);
 
         return view('dicegameinit');
     }

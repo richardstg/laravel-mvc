@@ -75,22 +75,38 @@ class DiceGame
         //     $this->computerTotalScore += 1;
         // }
 
-        $this->assertWinner();
+        $this->assertPlayerWin();
 
         return $this->diceHand->values();
     }
 
     /**
-     * Assert winner.
+     * Assert if player win.
      *
      * @return void.
      */
-    public function assertWinner()
+    public function assertPlayerWin()
     {
         if ($this->protocol["player"] === 21) {
             $this->playerWin = true;
             $this->playerTotalScore += 1;
         } else if ($this->protocol["player"] > 21) {
+            $this->computerWin = true;
+            $this->computerTotalScore += 1;
+        }
+    }
+
+    /**
+     * Assert if computer win.
+     *
+     * @return void.
+     */
+    public function assertComputerWin()
+    {
+        if ($this->protocol["computer"] > 21) {
+            $this->playerWin = true;
+            $this->playerTotalScore += 1;
+        } else {
             $this->computerWin = true;
             $this->computerTotalScore += 1;
         }
@@ -118,7 +134,7 @@ class DiceGame
         //     $this->computerTotalScore += 1;
         // }
 
-        $this->assertWinner();
+        $this->assertComputerWin();
 
         return $this->diceHand->values();
     }

@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Dice;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 /**
@@ -16,20 +16,14 @@ class PostDiceGamePlay extends Controller
 {
     public function index()
     {
-        $_SESSION["lastRollPlayer"] = $_SESSION["game"]->playerPlay();
+        // $_SESSION["lastRollPlayer"] = $_SESSION["game"]->playerPlay();
+        session(['lastRollPlayer' => session('game')->playerPlay()]);
 
-        if ($_SESSION["game"]->playerWin || $_SESSION["game"]->computerWin) {
-            // redirectTo(url("/results"));
-            // return;
-            return (new Response())
-                ->withStatus(301)
-                ->withHeader("Location", url("/results"));
+        if (session('game')->playerWin || session('game')->computerWin) {
+            return redirect('dice/results');
         } else {
-            // redirectTo(url("/play"));
-            // return;
-            return (new Response())
-                ->withStatus(301)
-                ->withHeader("Location", url("/play"));
+            return redirect('dice/play');
+            // return redirect()->route('dice/play')->with(['success' => 'Post Successfully Created']);
         }
     }
 }

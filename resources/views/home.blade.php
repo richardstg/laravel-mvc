@@ -4,6 +4,6 @@
 
 @section('content')
 
-    <h1>Content</h1>
+    <h1>Välkommen!</h1>
 
 @endsection

@@ -6,29 +6,26 @@
 
     <h1>Resultat</h1>
     <div class="total-points">
-        <h3 style="border-bottom: none">Dina poäng för rundan: {{ $totalPointsPlayer }}</h3>
-        @if($playerLastHandSum)
-            <h3 style="border-bottom: none">Poäng för senaste kast: {{ $playerLastHandSum }}</h3>
-        @endif
+        <h3 style="border-bottom: none">Dina poäng för rundan: {{ $roundPointsPlayer }}</h3>
+        <h3 style="border-bottom: none">Datorns poäng för rundan: {{ $roundPointsComputer }}</h3>
+        <h3 style="border-bottom: none">Antal rundor som du vunnit: {{ $playerTotalScore }}</h3>
+        <h3 style="border-bottom: none">Antal rundor som datorn vunnit: {{ $computerTotalScore }}</h3>
     </div>
-    <form action="play" method="post">
-        <input type="submit" name="rollDices" value="Kasta">
+    <br>
+    <div class="total-points">
+    @if($playerWin)
+        <h1 style="border-bottom: none">Grattis, du vann!</h1>
+    @else
+        <h1 style="border-bottom: none">Du förlorade.</h1>
+    @endif
+    </div>
+    <form action="/dice" method="post">
+        <input type="submit" name="newRound" value="Nästa runda">
+        {{ csrf_field() }}
     </form>
-    @if($totalPointsPlayer > 0)
-        <form action="computerplay" method="post">
-            <input type="submit" name="stopRound" value="Stanna">
-        </form>
-    @endif
-
     <div class="game-field">
-    @if($playerLastHandSum)
-        <p class="dice-utf8">
-            @foreach($playerLastHandGraphical as $value)
-                <i style="font-style: normal" class="{{ $value }}"></i>
-            @endforeach
-        </p>
-        <p>Du kastade: {{ implode(', ', $playerLastHand) }}</p>
-    @endif
+        <p>Poäng för ditt senaste kast: {{ $playerLastHandSum }}</p>
     </div>
+    <a href="/dice">Återställ</a>
 
 @endsection

@@ -16,10 +16,10 @@ class GetDiceGamePlay extends Controller
     public function index()
     {
         $data = [
-            "playerLastHand" => $_SESSION["game"]->playerLastHand,
-            "playerLastHandSum" => $_SESSION["game"]->playerLastHandSum,
-            "playerLastHandGraphical" => $_SESSION["game"]->playerLastHandGraphical,
-            "totalPointsPlayer" => $_SESSION["game"]->protocol["player"],
+            "playerLastHand" => session('game')->playerLastHand,
+            "playerLastHandSum" => session('game')->playerLastHandSum,
+            "playerLastHandGraphical" => session('game')->playerLastHandGraphical,
+            "totalPointsPlayer" => session('game')->protocol["player"],
         ];
 
         return view('dicegameplay', $data);
