@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Dice game routes
 Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+// Dice game routes
 Route::get('/dice', 'App\Http\Controllers\Dice\GetDiceGame@index');
 Route::post('/dice', 'App\Http\Controllers\Dice\PostDiceGame@index');
 Route::get('/dice/play', 'App\Http\Controllers\Dice\GetDiceGamePlay@index');

@@ -11,12 +11,12 @@
             <h3 style="border-bottom: none">Poäng för senaste kast: {{ $playerLastHandSum }}</h3>
         @endif
     </div>
-    <form action="play" method="post">
+    <form action="" method="post">
         <input type="submit" name="rollDices" value="Kasta">
         {{ csrf_field() }}
     </form>
     @if($totalPointsPlayer > 0)
-        <form action="computerplay" method="post">
+        <form action="./computerplay" method="post">
             <input type="submit" name="stopRound" value="Stanna">
             {{ csrf_field() }}
         </form>

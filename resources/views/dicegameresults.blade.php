@@ -19,13 +19,13 @@
         <h1 style="border-bottom: none">Du förlorade.</h1>
     @endif
     </div>
-    <form action="/dice" method="post">
+    <form action="../dice" method="post">
         <input type="submit" name="newRound" value="Nästa runda">
         {{ csrf_field() }}
     </form>
     <div class="game-field">
         <p>Poäng för ditt senaste kast: {{ $playerLastHandSum }}</p>
     </div>
-    <a href="/dice">Återställ</a>
+    <a href="../dice">Återställ</a>
 
 @endsection

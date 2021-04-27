@@ -6,7 +6,7 @@
 
     <h1>Starta spelet</h1>
     <div>
-        <form action="/dice" method="post">
+        <form action="" method="post">
             <label for="numberDices">Antal tärningar:</label>
             <select name="numberDices" id="numberDices">
                 <option value="1" selected="selected">1</option>
