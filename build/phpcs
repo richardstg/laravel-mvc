@@ -1,0 +1,47 @@
+
+FILE: ...y-laravel-app\database\migrations\2014_10_12_000000_create_users_table.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 7 | ERROR | Each class must be in a namespace of at least one level (a
+   |       | top-level vendor name)
+--------------------------------------------------------------------------------
+
+
+FILE: ...app\database\migrations\2014_10_12_100000_create_password_resets_table.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 7 | ERROR | Each class must be in a namespace of at least one level (a
+   |       | top-level vendor name)
+--------------------------------------------------------------------------------
+
+
+FILE: ...vel-app\database\migrations\2019_08_19_000000_create_failed_jobs_table.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 7 | ERROR | Each class must be in a namespace of at least one level (a
+   |       | top-level vendor name)
+--------------------------------------------------------------------------------
+
+
+FILE: ...y-laravel-app\database\migrations\2021_04_28_124250_create_books_table.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 7 | ERROR | Each class must be in a namespace of at least one level (a
+   |       | top-level vendor name)
+--------------------------------------------------------------------------------
+
+
+FILE: ...avel-app\database\migrations\2021_04_28_161125_create_highscores_table.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 7 | ERROR | Each class must be in a namespace of at least one level (a
+   |       | top-level vendor name)
+--------------------------------------------------------------------------------
+
+Time: 9.11 secs; Memory: 8MB
+
