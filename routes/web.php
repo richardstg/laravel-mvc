@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Dice game routes
 Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+// Dice game routes
 Route::get('/dice', 'App\Http\Controllers\Dice\GetDiceGame@index');
 Route::post('/dice', 'App\Http\Controllers\Dice\PostDiceGame@index');
 Route::get('/dice/play', 'App\Http\Controllers\Dice\GetDiceGamePlay@index');
@@ -25,3 +26,9 @@ Route::get('/dice/results', 'App\Http\Controllers\Dice\GetDiceGameResults@index'
 // Roll dices routes
 Route::get('/rolldices', 'App\Http\Controllers\RollDices\RollDices@get');
 Route::post('/rolldices', 'App\Http\Controllers\RollDices\RollDices@post');
+
+// Books routes
+Route::get('/books', 'App\Http\Controllers\Books\BooksController@get');
+
+// Highscore routes
+Route::get('/highscore', 'App\Http\Controllers\Highscore\HighscoreController@get');

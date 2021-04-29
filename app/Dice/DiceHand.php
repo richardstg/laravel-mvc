@@ -16,7 +16,7 @@ class DiceHand
     private $values;
     private $graphicalValues;
     private $numDices;
-    public  $dicesToKeepIndexes;
+    public $dicesToKeepIndexes;
 
     /**
      * Constructor to create a DiceHand.

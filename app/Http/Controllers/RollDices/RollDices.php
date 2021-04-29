@@ -1,7 +1,5 @@
 <?php
 
-// declare(strict_types=1);
-
 namespace App\Http\Controllers\RollDices;
 
 use Illuminate\Http\Request;

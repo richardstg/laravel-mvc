@@ -1,6 +1,7 @@
 /**
  * Style a dice using UTF-8 characters.
  */
+
 .dice-utf8 .dice-1::after {
     content: "\2680";
 }

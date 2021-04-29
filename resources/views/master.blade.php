@@ -15,13 +15,19 @@
         <div class="container">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="/">Hem</a>
+                <a class="nav-link" href="./">Hem</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/dice">Tärningsspelet</a>
+                <a class="nav-link" href="./dice">Tärningsspelet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rolldices">Rulla tärningar</a>
+                    <a class="nav-link" href="./highscore">Highscore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./rolldices">Rulla tärningar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./books">Böcker</a>
                 </li>
             </div>
         </div>
