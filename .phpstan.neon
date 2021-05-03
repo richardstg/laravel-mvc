@@ -2,7 +2,7 @@ parameters:
     level: 5
     paths:
         - config
-        - src
-        #- test
+        - app
+        #- tests
     bootstrapFiles:
         - .phpstan.constants.php

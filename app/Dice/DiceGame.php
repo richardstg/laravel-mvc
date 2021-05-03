@@ -19,7 +19,7 @@ class DiceGame
     public $protocol;
     public $computerLastHand;
     public $playerLastHand;
-    public $playerLastHandGraphical;
+    public $playerLastHandGraph;
     public $playerLastHandSum;
     public $computerLastHandSum;
     public $playerWin;
@@ -45,7 +45,7 @@ class DiceGame
         $this->protocol = ["player" => 0, "computer" => 0];
         $this->playerLastHand = [];
         $this->computerLastHand = [];
-        $this->playerLastHandGraphical = [];
+        $this->playerLastHandGraph = [];
         $this->playerLastHandSum = 0;
         $this->computerLastHandSum = 0;
         $this->playerWin = false;
@@ -64,7 +64,7 @@ class DiceGame
         $this->diceHand->roll();
         $this->playerLastHand = $this->diceHand->values();
         $this->playerLastHandSum = $this->diceHand->sum();
-        $this->playerLastHandGraphical = $this->diceHand->graphicalValues();
+        $this->playerLastHandGraph = $this->diceHand->graphicalValues();
         $this->protocol["player"] += $this->diceHand->sum();
 
         // if ($this->protocol["player"] === 21) {
@@ -106,10 +106,10 @@ class DiceGame
         if ($this->protocol["computer"] > 21) {
             $this->playerWin = true;
             $this->playerTotalScore += 1;
-        } else {
-            $this->computerWin = true;
-            $this->computerTotalScore += 1;
+            return;
         }
+        $this->computerWin = true;
+        $this->computerTotalScore += 1;
     }
 
     /**
@@ -149,7 +149,7 @@ class DiceGame
         $this->protocol = ["player" => 0, "computer" => 0];
         $this->playerLastHand = [];
         $this->computerLastHand = [];
-        $this->playerLastHandGraphical = [];
+        $this->playerLastHandGraph = [];
         $this->playerLastHandSum = 0;
         $this->computerLastHandSum = 0;
         $this->playerWin = false;

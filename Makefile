@@ -19,6 +19,8 @@ clean-all: clean
 
 install: install-php-tools
 	composer install
+	# composer require phpunit/phpunit --dev
+	# composer require phpstan/phpstan --dev
 
 install-php-tools:
 	install -d .bin
@@ -59,7 +61,7 @@ prepare:
 	rm -rf build/*
 
 phploc: prepare
-	[ ! -d src ] || $(PHPLOC) src | tee build/phploc
+	[ ! -d app ] || $(PHPLOC) app | tee build/phploc
 
 phpcs: prepare
 	[ ! -f .phpcs.xml ] || $(PHPCS) --standard=.phpcs.xml | tee build/phpcs
@@ -68,20 +70,20 @@ phpcbf:
 ifneq ($(wildcard test),)
 	- [ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml
 else
-	- [ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml src
+	- [ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml app
 endif
 
 phpcpd: prepare
-	$(PHPCPD) src | tee build/phpcpd
+	$(PHPCPD) app | tee build/phpcpd
 
 phpmd: prepare
-	- [ ! -f .phpmd.xml ] || [ ! -d src ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
+	- [ ! -f .phpmd.xml ] || [ ! -d app ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
 
 phpstan: prepare
 	- [ ! -f .phpstan.neon ] || $(PHPSTAN) analyse -c .phpstan.neon | tee build/phpstan
 
 phpunit: prepare
-	[ ! -d "test" ] || XDEBUG_MODE=coverage $(PHPUNIT) --configuration .phpunit.xml $(options) | tee build/phpunit
+	[ ! -d "tests" ] || XDEBUG_MODE=coverage $(PHPUNIT) --configuration .phpunit.xml $(options) | tee build/phpunit
 
 cs: phpcs
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\RollDices\RollDices;
 use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 /**
  * Test cases for class Dice.
@@ -33,9 +34,6 @@ class DiceControllersTest extends TestCase
         // $response = $this->call('POST', '/user', ['name' => 'Taylor']);
         // $this->assertContains('data', $response->content());
         $this->assertEquals($response, $this->get('/dice')->content());
-        // // Eller
-        // $this->get('/dice')->assertViewHas('data');
-        // $this->get('/dice')->assertSeeText('data');
     }
 
     /**
@@ -72,6 +70,7 @@ class DiceControllersTest extends TestCase
      */
     public function testPostDiceGame()
     {
+        $this->withoutMiddleware();
         $game = new DiceGame();
 
         $this->withSession(['game' => $game])->post('/dice')->assertRedirect("/dice/play");
@@ -82,6 +81,7 @@ class DiceControllersTest extends TestCase
      */
     public function testPostDiceGamePlay()
     {
+        $this->withoutMiddleware();
         $game = new DiceGame();
 
         $this->withSession(['game' => $game])->post('/dice/play', ['numDices' => 5])->assertRedirect("/dice/play");
@@ -92,6 +92,7 @@ class DiceControllersTest extends TestCase
      */
     public function testPostDiceGameComputerPlay()
     {
+        $this->withoutMiddleware();
         $game = new DiceGame();
 
         $this->withSession(['game' => $game])->post('/dice/computerplay')->assertRedirect("/dice/results");
@@ -102,6 +103,7 @@ class DiceControllersTest extends TestCase
      */
     public function testPostRollDices()
     {
+        $this->withoutMiddleware();
         $diceHand = new DiceHand();
 
         $this->withSession(['dicehand' => $diceHand])->post('/rolldices', ['rollDices' => true])->assertRedirect("/rolldices");

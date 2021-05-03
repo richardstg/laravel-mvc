@@ -30,9 +30,10 @@ class PostDiceGame extends Controller
         }
         if (session('game') === null) {
             session(['game' => new DiceGame(intval($request->numberDices))]);
-        } else {
-            session('game')->newRound();
+            return redirect('dice/play');
         }
+
+        session('game')->newRound();
         return redirect('dice/play');
     }
 }

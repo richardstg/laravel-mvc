@@ -21,9 +21,8 @@ class PostDiceGamePlay extends Controller
 
         if (session('game')->playerWin || session('game')->computerWin) {
             return redirect('dice/results');
-        } else {
-            return redirect('dice/play');
-            // return redirect()->route('dice/play')->with(['success' => 'Post Successfully Created']);
         }
+        return redirect('dice/play');
+        // return redirect()->route('dice/play')->with(['success' => 'Post Successfully Created']);
     }
 }

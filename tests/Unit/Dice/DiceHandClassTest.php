@@ -112,11 +112,11 @@ class DiceHandClassTest extends TestCase
         $dicesToKeepIndexes = [0, 5, 3];
         $diceHand->setDicesToKeepIndexes($dicesToKeepIndexes);
 
-        $i = 0;
+        $counter = 0;
 
         foreach ($dicesToKeepIndexes as $value) {
-            $this->assertTrue($value === $diceHand->getDicesToKeepIndexes()[$i]);
-            $i = $i + 1;
+            $this->assertTrue($value === $diceHand->getDicesToKeepIndexes()[$counter]);
+            $counter = $counter + 1;
         }
     }
 }

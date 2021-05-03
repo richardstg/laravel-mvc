@@ -13,7 +13,7 @@
     </div>
     <br>
     <div class="total-points">
-    @if($playerWin)
+    @if ($playerWin)
         <h1 style="border-bottom: none">Grattis, du vann!</h1>
     @else
         <h1 style="border-bottom: none">Du förlorade.</h1>

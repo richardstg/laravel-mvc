@@ -19,11 +19,12 @@ class RollDices extends Controller
 
         if (!session('dicehand')) {
             session(['dicehand' => new DiceHand()]);
-        } else {
-            $data = [
-                'lastHandGraphical' => session('dicehand')->graphicalValues()
-            ];
+            return view('rolldices', $data);
         }
+
+        $data = [
+            'lastHandGraphical' => session('dicehand')->graphicalValues()
+        ];
 
         return view('rolldices', $data);
     }

@@ -17,7 +17,7 @@ class GetDiceGamePlay extends Controller
         $data = [
             "playerLastHand" => session('game')->playerLastHand,
             "playerLastHandSum" => session('game')->playerLastHandSum,
-            "playerLastHandGraphical" => session('game')->playerLastHandGraphical,
+            "playerLastHandGraph" => session('game')->playerLastHandGraph,
             "totalPointsPlayer" => session('game')->protocol["player"],
         ];
 

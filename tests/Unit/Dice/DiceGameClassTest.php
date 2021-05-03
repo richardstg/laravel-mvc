@@ -43,13 +43,13 @@ class DiceGameClassTest extends TestCase
     public function testPlayerPlay()
     {
         $diceGame = new DiceGame();
-        $res = $diceGame->playerPlay();
+        $diceGame->playerPlay();
 
         $diceGame->diceHand;
 
         $this->assertEquals($diceGame->playerLastHand, $diceGame->diceHand->values());
         $this->assertEquals($diceGame->playerLastHandSum, $diceGame->diceHand->sum());
-        $this->assertEquals($diceGame->playerLastHandGraphical, $diceGame->diceHand->graphicalValues());
+        $this->assertEquals($diceGame->playerLastHandGraph, $diceGame->diceHand->graphicalValues());
         $this->assertEquals($diceGame->protocol["player"], $diceGame->diceHand->sum());
 
         // $diceGame->playerPlay();
@@ -81,7 +81,7 @@ class DiceGameClassTest extends TestCase
     public function testComputerPlay()
     {
         $diceGame = new DiceGame();
-        $res = $diceGame->computerPlay();
+        $diceGame->computerPlay();
 
         $diceGame->diceHand;
 

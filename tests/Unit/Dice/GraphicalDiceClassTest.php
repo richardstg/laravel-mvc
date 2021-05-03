@@ -44,7 +44,7 @@ class GraphicalDiceClassTest extends TestCase
     public function testGraphic()
     {
         $dice = new GraphicalDice();
-        $res = $dice->roll();
+        $dice->roll();
 
         $this->assertTrue(explode("-", $dice->graphic())[1] == $dice->getLastRoll());
     }

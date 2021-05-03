@@ -1,0 +1,5 @@
+C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Console\Kernel.php:25	Avoid unused parameters such as '$schedule'.
+C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Exceptions\Handler.php:37	Avoid unused parameters such as '$e'.
+C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Http\Controllers\Books\BooksController.php:16	Avoid using static access to class '\App\Models\Book' in method 'get'.
+C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Providers\BroadcastServiceProvider.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Broadcast' in method 'boot'.
+C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Providers\RouteServiceProvider.php:59	Avoid using static access to class '\Illuminate\Support\Facades\RateLimiter' in method 'configureRateLimiting'.

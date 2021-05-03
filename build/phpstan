@@ -1,0 +1,32 @@
+ ------ ------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Dice\PostDiceGame.php                              [39m 
+ ------ ------------------------------------------------------------------------- 
+  19     Access to an undefined property Illuminate\Http\Request::$quit.          
+  22     Access to an undefined property App\Models\Highscore::$player_points.    
+  23     Access to an undefined property App\Models\Highscore::$computer_points.  
+  32     Access to an undefined property Illuminate\Http\Request::$numberDices.   
+ ------ ------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Highscore\HighscoreController.php              [39m 
+ ------ --------------------------------------------------------------------- 
+  16     Call to an undefined static method App\Models\Highscore::orderBy().  
+ ------ --------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\RollDices\RollDices.php                         [39m 
+ ------ ---------------------------------------------------------------------- 
+  34     Access to an undefined property Illuminate\Http\Request::$rollDices.  
+  39     Access to an undefined property Illuminate\Http\Request::$quit.       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+ [32m Line [39m [32m app\Http\Middleware\Authenticate.php                                                                             [39m 
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+  17     Method App\Http\Middleware\Authenticate::redirectTo() should return string|null but return statement is missing.  
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+
+[37;41m                                                                                                                        [39;49m
+[37;41m [ERROR] Found 8 errors                                                                                                 [39;49m
+[37;41m                                                                                                                        [39;49m
+
