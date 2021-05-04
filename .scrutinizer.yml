@@ -29,11 +29,11 @@ build:
     tests-and-coverage:
       tests:
         override:
-          # - command: "make phpunit"
-          #   coverage:
-          #     file: "build/coverage.clover"
-          #     format: "php-clover"
-          - command: "vendor/bin/phpunit --coverage-clover=coverage"
-                coverage:
-                    file: "build/coverage.clover"
-                    format: "clover"
+          - command: "make phpunit"
+            coverage:
+              file: "build/coverage.clover"
+              format: "php-clover"
+          # - command: "vendor/bin/phpunit --coverage-clover=coverage"
+          #       coverage:
+          #           file: "build/coverage.clover"
+          #           format: "clover"
