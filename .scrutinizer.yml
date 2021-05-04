@@ -7,15 +7,13 @@ filter:
 build:
   environment:
     variables:
-      # APP_KEY: "base64:OYl4Bk9ekouOUIRXyeTD0FVi+cJ9D+HMyDJBgSBSUuI="
-      # APP_ENV: "testing"
-      DB_DATABASE: "scrutinizer.sqlite"
+      # DB_DATABASE: "scrutinizer.sqlite"
+      # DB_DATABASE: ""
 
   dependencies:
     before:
-      - touch scrutinizer.sqlite
-  #   after:
-  #     - php artisan migrate
+      # - touch scrutinizer.sqlite
+      - touch database/database.sqlite
 
   nodes:
     analysis:
