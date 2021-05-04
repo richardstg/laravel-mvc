@@ -5,10 +5,6 @@ filter:
   excluded_paths: [vendor/*, tests/*]
 
 build:
-  environment:
-    variables:
-      # DB_DATABASE: "database.sqlite"
-
   dependencies:
     before:
       - touch database/database.sqlite
