@@ -8,7 +8,7 @@ build:
   environment:
     variables:
       # DB_DATABASE: "scrutinizer.sqlite"
-      DB_DATABASE: ""
+      DB_DATABASE: "database/database.sqlite"
 
   dependencies:
     before:
