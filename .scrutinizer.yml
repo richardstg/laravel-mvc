@@ -5,9 +5,14 @@ filter:
   excluded_paths: [vendor/*, tests/*]
 
 build:
+  environment:
+    variables:
+      # APP_KEY: "base64:OYl4Bk9ekouOUIRXyeTD0FVi+cJ9D+HMyDJBgSBSUuI="
+      # APP_ENV: "testing"
+      DB_DATABASE: "scrutinizer"
   dependencies:
     before:
-      - touch database/database.sqlite
+      - touch scrutinizer.sqlite
   #   after:
   #     - php artisan migrate
 
@@ -17,7 +22,7 @@ build:
         override:
           - php-scrutinizer-run
 
-    coverage:
+    tests-and-coverage:
       tests:
         override:
           - command: "make phpunit"
