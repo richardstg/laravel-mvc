@@ -5,11 +5,11 @@ filter:
   excluded_paths: [vendor/*, tests/*]
 
 build:
-  dependencies:
-    before:
-      - touch database/database.sqlite
-    after:
-      - php artisan migrate
+  # dependencies:
+  #   before:
+  #     - touch database/database.sqlite
+  #   after:
+  #     - php artisan migrate
 
   nodes:
     analysis:
@@ -17,7 +17,7 @@ build:
         override:
           - php-scrutinizer-run
 
-    tests-and-coverage:
+    coverage:
       tests:
         override:
           - command: "make phpunit"
