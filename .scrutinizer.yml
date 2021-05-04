@@ -5,9 +5,9 @@ filter:
   excluded_paths: [vendor/*, tests/*]
 
 build:
-  # dependencies:
-  #   before:
-  #     - touch database/database.sqlite
+  dependencies:
+    before:
+      - touch database/database.sqlite
   #   after:
   #     - php artisan migrate
 
