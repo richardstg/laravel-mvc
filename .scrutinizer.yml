@@ -31,9 +31,5 @@ build:
         override:
           - command: "make phpunit"
             coverage:
-              file: "build/coverage.clover"
-              format: "clover"
-          # - command: "vendor/bin/phpunit --coverage-clover=coverage"
-          #       coverage:
-          #           file: "build/coverage.clover"
-          #           format: "clover"
+              file: build/coverage.clover
+              format: clover
