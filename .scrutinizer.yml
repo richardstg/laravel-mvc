@@ -33,7 +33,7 @@ build:
           #   coverage:
           #     file: "build/coverage.clover"
           #     format: "php-clover"
-          - command: vendor/bin/phpunit --coverage-clover=coverage
+          - command: "vendor/bin/phpunit --coverage-clover=coverage"
                 coverage:
                     file: "build/coverage.clover"
-                    format: clover
+                    format: "clover"
