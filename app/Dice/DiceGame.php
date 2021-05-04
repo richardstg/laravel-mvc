@@ -57,7 +57,7 @@ class DiceGame
     /**
      * Player play.
      *
-     * @return array.
+     * @return array
      */
     public function playerPlay()
     {
@@ -83,7 +83,7 @@ class DiceGame
     /**
      * Assert if player win.
      *
-     * @return void.
+     * @return void
      */
     public function assertPlayerWin()
     {
@@ -99,7 +99,7 @@ class DiceGame
     /**
      * Assert if computer win.
      *
-     * @return void.
+     * @return void
      */
     public function assertComputerWin()
     {
@@ -115,7 +115,7 @@ class DiceGame
     /**
      * Computer play.
      *
-     * @return array.
+     * @return array
      */
     public function computerPlay()
     {
@@ -142,7 +142,7 @@ class DiceGame
     /**
      * Reset game for new round.
      *
-     * @return void.
+     * @return void
      */
     public function newRound()
     {

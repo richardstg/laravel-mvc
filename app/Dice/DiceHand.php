@@ -41,7 +41,7 @@ class DiceHand
     /**
      * Roll the dices.
      *
-     * @return array.
+     * @return array
      */
     public function roll()
     {
@@ -58,7 +58,7 @@ class DiceHand
     // /**
     //  * Set the dices.
     //  *
-    //  * @return void.
+    //  * @return void
     //  */
     // public function setDices($dices)
     // {
@@ -68,7 +68,7 @@ class DiceHand
     /**
      * Get which dices to keep.
      *
-     * @return array.
+     * @return array
      */
     public function getDicesToKeepIndexes()
     {
@@ -78,7 +78,7 @@ class DiceHand
     /**
      * Set which dices to keep.
      *
-     * @return void.
+     * @return void
      */
     public function setDicesToKeepIndexes($dicesToKeepIndexes)
     {
@@ -88,7 +88,7 @@ class DiceHand
     /**
      * Get the dices.
      *
-     * @return array.
+     * @return array
      */
     public function getDices()
     {
@@ -98,7 +98,7 @@ class DiceHand
     /**
      * Get dice.
      *
-     * @return object.
+     * @return object
      */
     public function getDice($index)
     {
@@ -108,7 +108,7 @@ class DiceHand
     /**
      * Add a dice to the dice hand.
      *
-     * @return void.
+     * @return void
      */
     // public function addDice($dice)
     // {
@@ -118,7 +118,7 @@ class DiceHand
     /**
      * Remove a dice to the dice hand.
      *
-     * @return void.
+     * @return void
      */
     // public function removeDice($index)
     // {
