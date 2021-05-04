@@ -2,7 +2,7 @@ imports:
   - php
 
 filter:
-  excluded_paths: [vendor/*, tests/*, database/*]
+  excluded_paths: [vendor/*, tests/*]
 
 build:
   environment:
@@ -12,13 +12,13 @@ build:
     # hosts:
     #   laravel.dev: "127.0.0.1"
     variables:
-      # APP_KEY: "base64:bN9CCzfNsJhDhPWpyZxbZ74A1FzfFkfjb8K1zYwngs8="
+      APP_KEY: "base64:bN9CCzfNsJhDhPWpyZxbZ74A1FzfFkfjb8K1zYwngs8="
       # APP_ENV: "testing"
       # DB_HOST: "127.0.0.1"
       # DB_DATABASE: "scrutinizer"
       # DB_USERNAME: "root"
       # DB_PASSWORD: ""
-      # DB_CONNECTION: "sqlite"
+      DB_CONNECTION: "sqlite"
 
   nodes:
     analysis:
@@ -29,7 +29,11 @@ build:
     tests-and-coverage:
       tests:
         override:
-          - command: "make phpunit"
-            coverage:
-              file: "build/coverage.clover"
-              format: "php-clover"
+          # - command: "make phpunit"
+          #   coverage:
+          #     file: "build/coverage.clover"
+          #     format: "php-clover"
+          command: vendor/bin/phpunit --coverage-clover=coverage
+                coverage:
+                    file: "build/coverage.clover"
+                    format: clover
