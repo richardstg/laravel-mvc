@@ -7,17 +7,18 @@ filter:
 build:
   environment:
     variables:
-      DB_DATABASE: "scrutinizer"
+      DB_DATABASE: "database.sqlite"
+
   nodes:
     analysis:
       tests:
         override:
           - php-scrutinizer-run
 
-    tests-and-coverage:
-      tests:
-        override:
-          - command: "make phpunit"
-            coverage:
-              file: "build/coverage.clover"
-              format: "php-clover"
+  tests-and-coverage:
+    tests:
+      override:
+        - command: "make phpunit"
+          coverage:
+            file: "build/coverage.clover"
+            format: "php-clover"
