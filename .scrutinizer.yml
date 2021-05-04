@@ -1,39 +1,89 @@
-imports:
-  - php
+# imports:
+#   - php
 
-filter:
-  excluded_paths: [vendor/*, tests/*]
+# filter:
+#   excluded_paths: [vendor/*, tests/*]
+
+# build:
+#   environment:
+#     # php: "7.1"
+#     # mysql: "5.7"
+#     # node: "8.1"
+#     # hosts:
+#     #   laravel.dev: "127.0.0.1"
+#     variables:
+#       APP_KEY: "base64:bN9CCzfNsJhDhPWpyZxbZ74A1FzfFkfjb8K1zYwngs8="
+#       # APP_ENV: "testing"
+#       # DB_HOST: "127.0.0.1"
+#       # DB_DATABASE: "scrutinizer"
+#       # DB_USERNAME: "root"
+#       # DB_PASSWORD: ""
+#       DB_CONNECTION: "sqlite"
+
+#   nodes:
+#     analysis:
+#       tests:
+#         override:
+#           - php-scrutinizer-run
+
+#     tests-and-coverage:
+#       tests:
+#         override:
+#           - command: "make phpunit"
+#             coverage:
+#               file: "build/coverage.clover"
+#               format: "php-clover"
+#           # - command: "vendor/bin/phpunit --coverage-clover=coverage"
+#           #       coverage:
+#           #           file: "build/coverage.clover"
+#           #           format: "clover"
 
 build:
   environment:
-    # php: "7.1"
-    # mysql: "5.7"
-    # node: "8.1"
-    # hosts:
-    #   laravel.dev: "127.0.0.1"
-    variables:
-      APP_KEY: "base64:bN9CCzfNsJhDhPWpyZxbZ74A1FzfFkfjb8K1zYwngs8="
-      # APP_ENV: "testing"
-      # DB_HOST: "127.0.0.1"
-      # DB_DATABASE: "scrutinizer"
-      # DB_USERNAME: "root"
-      # DB_PASSWORD: ""
-      DB_CONNECTION: "sqlite"
+    php:
+      version: 7.2
+      pecl_extensions:
+        - memcached
+    memcached: true
 
   nodes:
     analysis:
+      project_setup:
+        override: true
       tests:
         override:
           - php-scrutinizer-run
-
-    tests-and-coverage:
-      tests:
-        override:
-          - command: "make phpunit"
+          - command: "vendor/bin/phpunit --dump-xdebug-filter xdebug-filter.php"
+          - command: "vendor/bin/phpunit --prepend xdebug-filter.php --coverage-clover=coverage"
             coverage:
-              file: "build/coverage.clover"
-              format: "php-clover"
-          # - command: "vendor/bin/phpunit --coverage-clover=coverage"
-          #       coverage:
-          #           file: "build/coverage.clover"
-          #           format: "clover"
+              file: "coverage"
+              format: "clover"
+
+filter:
+  excluded_paths: [docs/*, resources/*, tests/*, database/*, config/*]
+
+checks:
+  php:
+    remove_extra_empty_lines: true
+    remove_php_closing_tag: true
+    remove_trailing_whitespace: true
+
+    fix_use_statements:
+      remove_unused: true
+      preserve_multiple: false
+      preserve_blanklines: true
+      order_alphabetically: true
+
+    fix_php_opening_tag: true
+    fix_linefeed: true
+    fix_line_ending: true
+    fix_identation_4spaces: true
+    fix_doc_comments: true
+
+coding_style:
+  php:
+    spaces:
+      before_parentheses:
+        closure_definition: true
+      other:
+        after_type_cast: false
