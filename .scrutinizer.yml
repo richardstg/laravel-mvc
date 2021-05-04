@@ -7,7 +7,13 @@ filter:
 build:
   environment:
     variables:
-      DB_DATABASE: "database.sqlite"
+      # DB_DATABASE: "database.sqlite"
+
+  dependencies:
+    before:
+      - touch database/database.sqlite
+    after:
+      - php artisan migrate
 
   nodes:
     analysis:
