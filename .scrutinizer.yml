@@ -7,7 +7,7 @@ filter:
 build:
   environment:
     variables:
-      DB_DATABASE: "/database/database.sqlite"
+      DB_DATABASE: "scrutinizer"
   nodes:
     analysis:
       tests:
