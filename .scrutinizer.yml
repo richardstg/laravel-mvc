@@ -6,20 +6,8 @@ filter:
 
 build:
   environment:
-    # php: "7.1"
-    # mysql: "5.7"
-    # node: "8.1"
-    # hosts:
-    #   laravel.dev: "127.0.0.1"
     variables:
-      APP_KEY: "base64:bN9CCzfNsJhDhPWpyZxbZ74A1FzfFkfjb8K1zYwngs8="
-      # APP_ENV: "testing"
-      # DB_HOST: "127.0.0.1"
-      # DB_DATABASE: "scrutinizer"
-      # DB_USERNAME: "root"
-      # DB_PASSWORD: ""
-      DB_CONNECTION: "sqlite"
-
+      DB_DATABASE: "/database/database.sqlite"
   nodes:
     analysis:
       tests:
@@ -29,7 +17,7 @@ build:
     tests-and-coverage:
       tests:
         override:
-          - command: make phpunit
+          - command: "make phpunit"
             coverage:
-              file: build/coverage.clover
-              format: clover
+              file: "build/coverage.clover"
+              format: "php-clover"
