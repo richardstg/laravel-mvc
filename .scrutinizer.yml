@@ -9,7 +9,8 @@ build:
     variables:
       # APP_KEY: "base64:OYl4Bk9ekouOUIRXyeTD0FVi+cJ9D+HMyDJBgSBSUuI="
       # APP_ENV: "testing"
-      DB_DATABASE: "scrutinizer"
+      DB_DATABASE: "scrutinizer.sqlite"
+
   dependencies:
     before:
       - touch scrutinizer.sqlite
