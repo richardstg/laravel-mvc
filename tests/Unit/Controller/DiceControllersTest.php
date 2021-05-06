@@ -8,7 +8,7 @@ use App\Http\Controllers\RollDices\RollDices;
 use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+// use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 /**
  * Test cases for class Dice.
@@ -24,16 +24,17 @@ class DiceControllersTest extends TestCase
         //     'title'     =>     'foo',
         //     'text'     =>     'bar',
         // ]);
-
         // $response = $this->withSession(['game' => null])->get('/dice');
-
         // $this->session(['answers' => array('something')]);
-        $controller = new GetDiceGame();
-        $response = $controller->index();
-        // $response = $this->call('GET', '/dice');
-        // $response = $this->call('POST', '/user', ['name' => 'Taylor']);
-        // $this->assertContains('data', $response->content());
-        $this->assertEquals($response, $this->get('/dice')->content());
+
+        // $this->call('GET', '/dice')->assertViewHas(null);
+
+        // $controller = new GetDiceGame();
+        // $response = $controller->index();
+        // $this->assertEquals($response, $this->get('/dice')->content());
+
+        $response = $this->get('/dice');
+        $this->assertTrue($response->isOk());
     }
 
     /**
@@ -45,10 +46,12 @@ class DiceControllersTest extends TestCase
 
         $this->session(['game' => $game]);
 
-        $controller = new GetDiceGamePlay();
-        $response = $controller->index();
+        // $controller = new GetDiceGamePlay();
+        // $response = $controller->index();
 
-        $this->assertEquals($response, $this->get('/dice/play')->content());
+        // $this->assertEquals($response, $this->get('/dice/play')->content());
+
+        $this->call('GET', '/dice/play')->assertViewHas('playerLastHand');
     }
 
     /**
@@ -59,10 +62,11 @@ class DiceControllersTest extends TestCase
         $game = new DiceGame();
         $this->session(['game' => $game]);
 
-        $controller = new GetDiceGameResults();
-        $response = $controller->index();
+        // $controller = new GetDiceGameResults();
+        // $response = $controller->index();
 
-        $this->assertEquals($response, $this->get('/dice/results')->content());
+        // $this->assertEquals($response, $this->get('/dice/results')->content());
+        $this->call('GET', '/dice/results')->assertViewHas('playerWin');
     }
 
     /**

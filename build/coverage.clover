@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620130357">
-  <project timestamp="1620130357">
+<coverage generated="1620299752">
+  <project timestamp="1620299752">
     <file name="C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Console\Kernel.php">
       <class name="App\Console\Kernel" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="6" coveredelements="4"/>
@@ -178,9 +178,9 @@
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </class>
       <line num="17" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="20" type="stmt" count="1"/>
-      <line num="22" type="stmt" count="1"/>
-      <metrics loc="24" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <metrics loc="23" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
     </file>
     <file name="C:\Users\jag\dbwebb-kurser\mvc\me\ci\app\Http\Controllers\Dice\GetDiceGamePlay.php">
       <class name="App\Http\Controllers\Dice\GetDiceGamePlay" namespace="global">
@@ -434,6 +434,6 @@
       <line num="62" type="stmt" count="8"/>
       <metrics loc="63" ncloc="38" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="17" coveredelements="15"/>
     </file>
-    <metrics files="34" loc="1261" ncloc="876" classes="24" methods="46" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="183" coveredstatements="138" elements="229" coveredelements="170"/>
+    <metrics files="34" loc="1260" ncloc="876" classes="24" methods="46" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="183" coveredstatements="138" elements="229" coveredelements="170"/>
   </project>
 </coverage>
